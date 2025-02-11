@@ -29,12 +29,12 @@ jobs:
         distribution: 'temurin'
 
     ## application.yml 생성 후 secret 값 복붙
-    - uses: actions/checkout@v3
-    - run: mkdir -p ./src/main/resources
-    - run: cd ./src/main/resources
-    - run: touch ./application.yml
-    - run: echo "${{ secrets.APPLICATION }}" > ./src/main/resources/application.yml
-    - run: cat ./src/main/resources/application.yml
+#    - uses: actions/checkout@v3
+#    - run: mkdir -p ./src/main/resources
+#    - run: cd ./src/main/resources
+#    - run: touch ./application.yml
+#    - run: echo "${{ secrets.APPLICATION }}" > ./src/main/resources/application.yml
+#    - run: cat ./src/main/resources/application.yml
 
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
