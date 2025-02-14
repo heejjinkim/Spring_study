@@ -89,7 +89,7 @@ jobs:
           docker pull ${{ secrets.DOCKER_USERNAME }}/ureca:latest  # 최신 Docker 이미지 다운로드
           docker stop ureca_server || true  # 실행 중인 컨테이너 중지 (없어도 무시)
           docker rm ureca_server || true  # 기존 컨테이너 제거 (없어도 무시)
-          docker run -d --name ureca_server --network docker_network -p 80:8080 ${{ secrets.DOCKER_USERNAME }}/ureca:latest  # 새로운 컨테이너 실행
+          docker run -d --name ureca_server --network docker_network -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/ureca:latest  # 새로운 컨테이너 실행
 
     # ec2 접속 후 직접 Jar 파일 실행
 #    - name: Execute jar file on EC2
