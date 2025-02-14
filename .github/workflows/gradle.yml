@@ -84,6 +84,7 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_KEY }}
         script: |
+          docker network create docker_network || true  # 네트워크 생성
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_HUB_TOKEN }}  # EC2에서 Docker Hub에 로그인
           docker pull ${{ secrets.DOCKER_USERNAME }}/ureca:latest  # 최신 Docker 이미지 다운로드
           docker stop ureca_server || true  # 실행 중인 컨테이너 중지 (없어도 무시)
