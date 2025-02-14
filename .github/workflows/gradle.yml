@@ -40,11 +40,11 @@ jobs:
 
     # Gradle로 프로젝트 빌드
     - name: Build with Gradle Wrapper
-      run: ./gradlew build
+      run: ./gradlew clean build
 
-    # 빌드된 파일 이름 변경
-    - name: Change Name of Jar File
-      run: mv ./build/libs/*SNAPSHOT.jar ./cicdtest.jar
+#    # 빌드된 파일 이름 변경
+#    - name: Change Name of Jar File
+#      run: mv ./build/libs/*SNAPSHOT.jar ./cicdtest.jar
 
     # 도커 파일 빌드
     - name: Build the Docker image
